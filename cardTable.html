@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deck of Cards Demo</title>
+    <link rel="stylesheet" href="cardTable.css"/>
+</head>
+<body>
+    <main>
+        <h1>Deck of Cards Demo</h1>
+        <button id="reveal" onclick="deckContents()">Reveal</button>
+        <button id="shuffle" onclick="shuffle(deck)">Shuffle</button>
+        <button id="draw" onclick="draw(); update(); addCards();">Draw</button>
+        <!--<button id="images" onclick="imageInfo()";>Image Info</button>
+        <button id="toss" onclick="imageDestroy()";>Image Destroy</button>-->
+        <p>Choose a card to discard:</p>
+        <form>
+            <label for="dropdown">Cards in hand:</label>
+            <select name="cardsInHand" id="dropdown"></select>
+        </form>
+        <button id="discard" onclick="removeCards(); discard(); update();">Discard</button>
+        <p id="alert">No more cards to draw!</p>
+        <p id="alert2">No more cards to discard!</p>
+        <h2>Your Hand:</h2>
+        <div id="cardsInHand"></div>
+        <hr>
+    </main>
+    <script src="deck.js"></script>
+</body>
+</html>
