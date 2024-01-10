@@ -1,6 +1,9 @@
 // Initializes the deck as an empty array
 const deck = [];
 
+// Initializes the player's hand, which has no cards in it at the beginning
+const hand = [];
+
 // Establishes suits and values of cards in a standard 52-card deck
 const suits = ["clubs", "diamonds", "hearts", "spades"];
 const values = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"];
@@ -15,9 +18,18 @@ function shuffle() {
         }
     }
     // Deck shuffling
-    // for (let i = deck.length - 1; i > 0; i--) {
-    //   let j = Math.floor(Math.random() * (i + 1));
-    //   [deck[i], deck[j]] = [deck[j], deck[i]];
-    // }
+    for (let i = deck.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      [deck[i], deck[j]] = [deck[j], deck[i]];
+    }
     console.log(deck); 
+}
+
+function draw() {
+    if (deck.length >= 1) {
+        hand.push(deck[0]);
+        deck.shift(deck[0]);
+        // console.log(deck);
+        // console.log(hand);
+    }
 }
