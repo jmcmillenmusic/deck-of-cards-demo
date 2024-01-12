@@ -1,8 +1,7 @@
-// Initializes the deck as an empty array
+// Initializes the deck, your hand, and the discard pile as empty arrays
 const deck = [];
-
-// Initializes your hand, which has no cards in it at the beginning
 const hand = [];
+const discardPile = [];
 
 // Establishes suits and values of cards in a standard 52-card deck
 const suits = ["clubs", "diamonds", "hearts", "spades"];
@@ -217,5 +216,14 @@ function draw() {
         listOption.textContent = `${optn.Value} of ${optn.Suit}`;
         listOption.value = `${optn.Value} of ${optn.Suit}`;
         list.add(listOption);
+    }
+}
+
+function discard() {
+    if (hand.length >= 1) {
+        discardPile.unshift(hand[list.selectedIndex]);
+        hand.splice(list.selectedIndex, 1);
+        console.log(discardPile);
+        console.log(hand);
     }
 }
