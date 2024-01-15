@@ -229,10 +229,10 @@ function draw() {
                     cardImg.src = "./cardPhotos/MTG_Card_Back.jpg";
                     break;
             }
+            cardImg.id = `${card.Value} of ${card.Suit}`
         }
     }
     // Clears all options from the dropdown menu
-    // list.remove(list.selectedIndex);
     for (var i = 0; i < hand.length; i++) {
         var listOption = document.createElement("option");
         list.remove(listOption);
@@ -249,13 +249,15 @@ function draw() {
 
 function discard() {
     if (hand.length >= 1) {
-        discardPile.unshift(hand[list.selectedIndex]);
-        hand.splice(list.selectedIndex, 1);
         // Removes the image of the selected cards in the dropdown menu
-        var image_x = document.getElementById(document.images[list]);
-        console.log(image_x);
-        // image_x.parentNode.removeChild(image_x);
+        var dropImg = document.getElementById(document.images[list.selectedIndex].id);
+        // console.log(dropImg);
+        dropImg.parentNode.removeChild(dropImg);
         console.log(discardPile);
         console.log(hand);
+        // Adds the chosen card to the discard pile and removes it from your hand
+        discardPile.unshift(hand[list.selectedIndex]);
+        hand.splice(list.selectedIndex, 1);
+        list.remove(list.selectedIndex);
     }
 }
