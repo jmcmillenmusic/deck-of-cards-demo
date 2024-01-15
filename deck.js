@@ -24,7 +24,7 @@ function shuffle() {
       let j = Math.floor(Math.random() * (i + 1));
       [deck[i], deck[j]] = [deck[j], deck[i]];
     }
-    console.log(deck); 
+    document.getElementById("shuffle").disabled = "disabled";
 }
 
 function draw() {
@@ -32,8 +32,6 @@ function draw() {
     if (deck.length >= 1) {
         hand.push(deck[0]);
         deck.shift(deck[0]);
-        console.log(deck);
-        console.log(hand);
         // Creates images, appends them to the cardsInHand section, and sets their sources
         var handDiv = document.getElementById('cardsInHand');
         var cardImg = document.createElement('img');
@@ -251,10 +249,7 @@ function discard() {
     if (hand.length >= 1) {
         // Removes the image of the selected cards in the dropdown menu
         var dropImg = document.getElementById(document.images[list.selectedIndex].id);
-        // console.log(dropImg);
         dropImg.parentNode.removeChild(dropImg);
-        console.log(discardPile);
-        console.log(hand);
         // Adds the chosen card to the discard pile and removes it from your hand
         discardPile.unshift(hand[list.selectedIndex]);
         hand.splice(list.selectedIndex, 1);
