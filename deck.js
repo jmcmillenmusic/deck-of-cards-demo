@@ -229,6 +229,8 @@ function draw() {
             }
             cardImg.id = `${card.Value} of ${card.Suit}`
         }
+    } else {
+        document.getElementById("alert").style.visibility = "visible";
     }
     // Clears all options from the dropdown menu
     for (var i = 0; i < hand.length; i++) {
@@ -254,5 +256,7 @@ function discard() {
         discardPile.unshift(hand[list.selectedIndex]);
         hand.splice(list.selectedIndex, 1);
         list.remove(list.selectedIndex);
+    } else {
+        document.getElementById("alert2").style.visibility = "visible";
     }
 }
