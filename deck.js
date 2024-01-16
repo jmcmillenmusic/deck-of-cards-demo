@@ -24,7 +24,8 @@ function shuffle() {
       let j = Math.floor(Math.random() * (i + 1));
       [deck[i], deck[j]] = [deck[j], deck[i]];
     }
-    document.getElementById("shuffle").disabled = "disabled";
+    document.getElementById("shuffle").disabled = true;
+    document.getElementById("draw").disabled = false;
 }
 
 function draw() {
