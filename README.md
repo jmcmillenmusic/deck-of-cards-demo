@@ -6,7 +6,7 @@ After initially creating this project in codepen.io, I wanted to be able to add 
 
 ## Installation
 
-You can access this page with the following URL: (Insert URL Here)
+You can access this page with the following URL: https://jmcmillenmusic.github.io/deck-of-cards-demo/
 
 ## Usage
 
